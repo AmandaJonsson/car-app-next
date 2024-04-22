@@ -34,7 +34,7 @@ console.log(allCars);
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map(car => <CarCard car={car}/>)}
+              {allCars?.map((car, index) => <CarCard key={index} car={car}/>)}
             </div>
             <ShowMore pageNumber={(searchParams.limit || 10) / 10} isNext={(searchParams.limit || 10) > allCars.length}/>
           </section>
